@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mysql-service:
+    container_name: catalogo_mysql
+    restart: always
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=Catalogo
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=1234
+    volumes:
+      - my-datavolume:/var/lib/mysql
+    ports: 
+        - 33060:3306        
+  web-service:    
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-service
+    ports:
+      - 8080:8080    
+volumes:
+  my-datavolume:

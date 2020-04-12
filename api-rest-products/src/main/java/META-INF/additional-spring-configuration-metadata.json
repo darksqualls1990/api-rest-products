@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "spring.jpa.hibernate.properties.hibernate.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.hibernate.properties.hibernate.dialect'"
+  },
+  {
+    "name": "HEADER_AUTHORIZACION_KEY",
+    "type": "java.lang.String",
+    "description": "A description for 'HEADER_AUTHORIZACION_KEY'"
+  },
+  {
+    "name": "TOKEN_BEARER_PREFIX",
+    "type": "java.lang.String",
+    "description": "A description for 'TOKEN_BEARER_PREFIX'"
+  },
+  {
+    "name": "SUPER_SECRET_KEY",
+    "type": "java.lang.String",
+    "description": "A description for 'SUPER_SECRET_KEY'"
+  },
+  {
+    "name": "TOKEN_BEARER_PREFIX",
+    "type": "java.lang.String",
+    "description": "A description for 'TOKEN_BEARER_PREFIX'"
+  },
+  {
+    "name": "TOKEN_BEARER_PREFIX",
+    "type": "java.lang.String",
+    "description": "A description for 'TOKEN_BEARER_PREFIX'"
+  },
+  {
+    "name": "spring.jpa.hibernate.properties.hibernate.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.hibernate.properties.hibernate.dialect'"
+  },
+  {
+    "name": "spring.jpa.hibernate.properties.hibernate.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.hibernate.properties.hibernate.dialect'"
+  }
+]}
