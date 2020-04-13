@@ -1,6 +1,6 @@
 # Cliente Rest Envios UCP --
 
-Sistema que permite gestionar un cliente con servicios rest desplegando por docker
+Sistema que permite gestionar un cliente con servicios rest desplegando por docker y conexion a base de datos
 
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
