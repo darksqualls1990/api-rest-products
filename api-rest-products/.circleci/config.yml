@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  build:
+    docker:
+     - image: circleci/openjdk:8-jdk-alpine
+     - image: mysql:8
+       environment:
+        - MYSQL_ROOT_PASSWORD=1234
+        - MYSQL_DATABASE=Catalogo
+        - MYSQL_USER=admin
+        - MYSQL_PASSWORD=1234 
+    working_directory: ~/api-rest-products
+		
+    steps:
+     # git pull
+     - checkout
+     # setup testing env
+     - setup_remote_docker:
+        docker_layer_caching: true
+     - run:
+        name: Login to DockerHub
+        command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+    # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - api-rest-products-{{ checksum "pom.xml" }}
+
+      - run: mvn dependency:go-offline
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: api-rest-products-{{ checksum "pom.xml" }}
+        
+      # package into a jar
+      - run: mvn clean package
+
+      # build and push docker image to docker hub
+      - run: mvn clean compile jib:build -Dimage=zarinlo/springboot-api:$CIRCLE_BUILD_NUM
+
+      # store raw contents of src code
+      - store_artifacts:
+          path: target/classes
+          destination: api-rest-products 		
